@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reg.css">
+</head>
+<body>
+    <p>Текст до форматирования:</p>
+    <p class="text">One: 'Hi Mary.' Two: 'Oh, hi.'
+        One: 'How are you doing?'
+        Two: 'I'm doing alright. How about you?'
+        One: 'Not too bad. The weather is great isn't it?'
+        Two: 'Yes. It's absolutely beautiful today.'
+        One: 'I wish it was like this more frequently.'
+        Two: 'Me too.'
+        One: 'So where are you going now?'
+        Two: 'I'm going to meet a friend of mine at the department store'
+        One: 'Going to do a little shopping?'
+        Two: 'Yeah, I have to buy some presents for my parents.'
+        One: 'What's the occasion?'
+        Two: 'It's their anniversary.'
+        One: 'That's great. Well, you better get going. You don't want to be late.'
+        Two: 'I'll see you next time.'
+        One: 'Sure.' Bye.'</p>
+    <button class="btn">Форматировать</button>
+    <button class="btn2">Форматировать 2</button>
+    <p>Текст после форматирования:</p>
+    <p class="output-text"></p>
+    <hr>
+    <form action="#">
+        <div class="input-label">
+            <label for="name">Имя</label>
+            <input type="text" id="name">
+            <span class="warn" id="warn-name">Имя должно содержать только буквы</span>
+        </div>
+        <div class="input-label">
+            <label for="email">Email</label>
+            <input type="email" id="email">
+            <span class="warn" id="warn-email">E-mail имеет вид mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru</span>
+        </div>
+        <div class="input-label">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone">
+            <span class="warn" id="warn-phone">Телефон имеет вид +7(000)000-0000</span>
+        </div>
+        <div class="input-label">
+            <label for="text">Text</label>
+            <textarea id="Text"></textarea>
+        </div>
+        <button type="submit" class="put">Отправить</button>
+    </form>
+    <script src="js/reg.js"></script>
+</body>
+</html>
