@@ -1,84 +1,70 @@
-* {
-    transition: all .3s;
+body{
+    font-family: 'SF Pro Display', sans-serif;
 }
-header {
+#app {
+    position: relative;
+}
+header{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, .4);
-    box-shadow: 0 2px 3px 1px rgba(0, 0, 0, .4);
+    background-color: #2f2a2d;
+    justify-content: space-between;
+    color: #fafafa;
+    padding: 30px 80px;
 }
-.btn-cart,
-.buy-btn {
-    border-radius: 16px;
-    background-color: rgba(24, 163, 35, 0.9);
-    box-shadow: 0 0 6px 1px rgba(0, 0, 0, .2);
-    border: none;
-    font-family: sans-serif;
+button:focus{
     outline: none;
+}
+.logo{
+
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.btn-cart{
+    background-color: #fafafa;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    color: #2f2a2d;
+    border-radius: 5px;
+    transition: all ease-in-out .4s;
     cursor: pointer;
 }
-.btn-cart {
-    width: 150px;
-    height: 30px;
-    text-transform: uppercase;
-    font-size: 14px;
+.btn-cart:hover{
+    background-color: transparent;
+    border-color: #fafafa;
+    color: #fafafa;
 }
-.btn-cart:hover,
-.buy-btn:hover {
-    background-color: rgba(104, 184, 111, 0.9);
-    box-shadow: 0 0 6px 1px rgba(0, 0, 0, .4);
+.btn-cart, .logo{
+    align-self: center;
 }
-main {
-    padding-top: 65px;
-    max-width: 1170px;
-    width: 100%;
-    margin: 0 auto;
-}
-.products {
-    
-    display: flex;
+.products{
+    column-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-rows: 1fr;
+    padding: 40px 80px;
     justify-content: space-between;
 }
-.product-item {
-    width: 200px;
-    min-height: 250px;
-    background-color: rgb(211, 232, 241);
-    border-radius: 5px;
-    box-shadow: 0 0 9px 1px rgba(0, 0, 0, .2);
+p {
+    margin: 0 0 5px 0;
+}
+.product-item{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
+    width: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px 0;
 }
-.product-item:hover {
-    box-shadow: 0 0 9px 1px rgba(0, 0, 0, .3);
+img {
+    max-width: 100%;
+    height: auto
 }
-.product-item img {
-    max-width: 50%;
-}
-.buy-btn {
-    font-size: 12px;
-    padding: 10px 15px;
-}
-.allPrice {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    margin-top: 50px;
-}
-.allPrice span {
-    font-size: 18px;
-    display: inline-block;
-    padding-right: 10px;
+.desc {
+    border: 1px solid #c0c0c040;
+    padding: 15px
 }
 .cart{
+    display: flex;
     position: relative;
 }
 .cart-block{
@@ -93,6 +79,7 @@ main {
     color: black;
     width: 300px;
 }
+
 .invisible{
     display: none;
 }
@@ -107,7 +94,8 @@ main {
     border-right: 10px solid transparent;
     border-bottom: 10px solid white;
 }
-.del-btn{
+
+.buy-btn, .del-btn{
     margin-top: 5px;
     background-color: #2f2a2d;
     padding: 5px 15px;
@@ -116,6 +104,11 @@ main {
     border-radius: 5px;
     transition: all ease-in-out .4s;
     cursor: pointer;
+}
+.buy-btn:hover, .del-btn:hover{
+    background-color: #fafafa;
+    color: #2f2a2d;
+    border: 1px solid #2f2a2d;
 }
 .cart-item {
     display: flex;
@@ -145,15 +138,17 @@ main {
     margin-top: 15px;
     font-size: 0.75em;
 }
+.right-block{
+    text-align: right;
+}
 .btn-search {
     background-color: transparent;
     border: none;
+    color: #fafafa;
     font-size: 1.2em;
     position: absolute;
     bottom: 5px;
     right: 0;
-    outline: none;
-    cursor: pointer;
 }
 .search-form{
     position: relative;
@@ -166,6 +161,36 @@ main {
 .search-field {
     box-sizing: border-box;
     width: 200px;
+    color: #fafafa;
     padding: 10px;
+    background-color: transparent;
     border: none;
+    border-bottom: 2px solid #fafafa;
+}
+.error-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.3);
+    top: 0;
+    left: 0;
+}
+.error-inner {
+    position: absolute;
+    width: 80%;
+    height: 70%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.error-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    font-size: 18px;
 }
